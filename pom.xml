@@ -8,6 +8,7 @@
   <modules>
     <module>parent</module>
     <module>features</module>
+    <module>Application/example</module>
   </modules>
   <packaging>pom</packaging>
 
@@ -133,28 +134,7 @@
             </execution>
           </executions>
         </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-javadoc-plugin</artifactId>
-          <version>${build.javadoc.version}</version>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-release-plugin</artifactId>
-          <version>${build.release.version}</version>
-          <configuration>
-            <tagNameFormat>v@{project.version}</tagNameFormat>
-            <mavenExecutorId>forked-path</mavenExecutorId>
-            <autoVersionSubmodules>true</autoVersionSubmodules>
-            <preparationGoals>clean install</preparationGoals>
-            <useReleaseProfile>false</useReleaseProfile>
-          </configuration>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-jdeps-plugin</artifactId>
-          <version>3.0.0</version>
-        </plugin>
+
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-resources-plugin</artifactId>
@@ -169,70 +149,13 @@
           <artifactId>maven-install-plugin</artifactId>
           <version>${build.install.version}</version>
         </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-source-plugin</artifactId>
-          <version>${build.source.version}</version>
-          <configuration>
-            <includePom>true</includePom>
-          </configuration>
-          <executions>
-            <execution>
-              <id>generate-source</id>
-              <phase>verify</phase>
-              <goals>
-                <goal>jar-no-fork</goal>
-              </goals>
-            </execution>
-          </executions>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-compiler-plugin</artifactId>
-          <version>${build.compiler.version}</version>
-          <configuration>
-            <encoding>${project.build.sourceEncoding}</encoding>
 
-            <source>${project.build.compilerLevel}</source>
-            <target>${project.build.compilerLevel}</target>
-            <compilerVersion>${project.build.compilerLevel}</compilerVersion>
-          </configuration>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-jar-plugin</artifactId>
-          <version>${build.jar.version}</version>
-          <executions>
-            <execution>
-              <goals>
-                <goal>test-jar</goal>
-              </goals>
-            </execution>
-          </executions>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-deploy-plugin</artifactId>
-          <version>${build.deploy.version}</version>
-        </plugin>
       </plugins>
     </pluginManagement>
 
     <plugins>
       <!-- Maven Javadoc -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-javadoc-plugin</artifactId>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-release-plugin</artifactId>
-        <configuration>
-          <preparationGoals>
-            clean install -P container -Denvironment=online -DpushImage=true
-          </preparationGoals>
-        </configuration>
-      </plugin>
+
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-resources-plugin</artifactId>
@@ -244,18 +167,6 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-source-plugin</artifactId>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-jar-plugin</artifactId>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-deploy-plugin</artifactId>
       </plugin>
     </plugins>
   </build>

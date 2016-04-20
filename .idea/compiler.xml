@@ -24,11 +24,13 @@
         <processorPath useClasspath="true" />
         <module name="bundle" />
         <module name="core" />
+        <module name="example" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="bundle" target="1.5" />
       <module name="core" target="1.5" />
+      <module name="example" target="1.8" />
       <module name="features" target="1.8" />
       <module name="karaf-server" target="1.8" />
       <module name="parent" target="1.8" />
