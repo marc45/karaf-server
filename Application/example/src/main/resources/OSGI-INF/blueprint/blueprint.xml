@@ -10,4 +10,24 @@
         </command>
     </command-bundle>
 
+    <reference id="exampleDataSource" filter="(instance=example)" interface="javax.sql.DataSource"/>
+
+    <bean id="exampleSessionFactory" class="cn.com.mybatis.blueprint.SqlSessionFactoryBean">
+        <property name="dataSource" ref="exampleDataSource"/>
+        <property name="sourceBundle" ref="blueprintBundle"/>
+        <property name="mappers">
+            <set>
+                <value>cn.com.mapper.ExampleMapper</value>
+            </set>
+        </property>
+    </bean>
+
+
+    <bean id="exampleMapper" class="cn.com.mybatis.blueprint.MapperFactory"
+          factory-method="get">
+        <argument index="0" ref="exampleSessionFactory"/>
+        <argument index="1" value="cn.com.mapper.ExampleMapper"/>
+    </bean>
+
+
 </blueprint>

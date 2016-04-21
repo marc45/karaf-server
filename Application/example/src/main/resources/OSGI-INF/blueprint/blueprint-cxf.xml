@@ -21,6 +21,8 @@
         </jaxrs:providers>
     </jaxrs:server>
 
-    <bean id="helloRestService" class="cn.com.service.HelloServiceImpl" />
+    <bean id="helloRestService" class="cn.com.service.HelloServiceImpl">
+        <property name="exampleMapper" ref="exampleMapper"/>
+    </bean>
 
 </blueprint>

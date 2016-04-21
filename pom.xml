@@ -9,6 +9,8 @@
     <module>parent</module>
     <module>features</module>
     <module>Application/example</module>
+    <module>framework/mybatis-blueprint</module>
+    <module>framework/datasource</module>
   </modules>
   <packaging>pom</packaging>
 
@@ -150,12 +152,21 @@
           <version>${build.install.version}</version>
         </plugin>
 
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>${build.compiler.version}</version>
+          <configuration>
+            <encoding>${project.build.sourceEncoding}</encoding>
+            <source>${project.build.compilerLevel}</source>
+            <target>${project.build.compilerLevel}</target>
+            <compilerVersion>${project.build.compilerLevel}</compilerVersion>
+          </configuration>
+        </plugin>
       </plugins>
     </pluginManagement>
 
     <plugins>
-      <!-- Maven Javadoc -->
-
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-resources-plugin</artifactId>
@@ -167,6 +178,10 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-source-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
       </plugin>
     </plugins>
   </build>

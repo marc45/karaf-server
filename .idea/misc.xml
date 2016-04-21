@@ -5,6 +5,8 @@
   </component>
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="Osmorc" url="file://$PROJECT_DIR$/Application/example" />
+    <file type="Osmorc" url="file://$PROJECT_DIR$/framework/datasource" />
+    <file type="Osmorc" url="file://$PROJECT_DIR$/framework/mybatis-blueprint" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
