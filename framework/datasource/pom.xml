@@ -53,7 +53,7 @@
                     <instructions>
                         <Bundle-Activator>cn.com.framework.datasource.Activator</Bundle-Activator>
                         <Export-Package>
-                            cn.com.framework.datasource.*
+                            cn.com.framework.datasource*
                         </Export-Package>
                         <Import-Package>*</Import-Package>
                     </instructions>

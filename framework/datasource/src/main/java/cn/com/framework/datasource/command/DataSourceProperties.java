@@ -6,9 +6,7 @@ import org.apache.karaf.shell.api.action.Command;
 import org.apache.karaf.shell.api.action.Option;
 import org.apache.karaf.shell.api.action.lifecycle.Service;
 
-/**
- * Created by jianghailong on 16/1/8.
- */
+
 @Service
 @Command(scope = "datasource", name = "properties", description = "数据源配置")
 public class DataSourceProperties implements Action {

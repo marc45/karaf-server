@@ -7,7 +7,7 @@
           <property key="Private-Package" value="cn.com.*" />
           <property key="Import-Package" value="*" />
           <property key="Bundle-Name" value="karaf :: server :: example" />
-          <property key="Include-Resource" value="OSGI-INF/blueprint/blueprint-cxf.xml=$MODULE_DIR$/src/main/resources/OSGI-INF/blueprint/blueprint-cxf.xml,OSGI-INF/blueprint/blueprint.xml=$MODULE_DIR$/src/main/resources/OSGI-INF/blueprint/blueprint.xml" />
+          <property key="Include-Resource" value="cn/com/mapper/ExampleMapper.xml=$MODULE_DIR$/src/main/resources/cn/com/mapper/ExampleMapper.xml,OSGI-INF/blueprint/blueprint-cxf.xml=$MODULE_DIR$/src/main/resources/OSGI-INF/blueprint/blueprint-cxf.xml,OSGI-INF/blueprint/blueprint.xml=$MODULE_DIR$/src/main/resources/OSGI-INF/blueprint/blueprint.xml" />
         </additionalProperties>
         <additionalJARContents />
       </configuration>
